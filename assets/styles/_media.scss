@@ -1,0 +1,23 @@
+@media screen and (max-width: 950px) {
+  .product__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product .item-card {
+    max-width: 100%;
+  }
+  .main {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 40px 0;
+  }
+  .product__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title {
+    font-size: 36px;
+  }
+}

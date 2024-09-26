@@ -1,0 +1,138 @@
+@import './vars';
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  padding-top: 140px;
+}
+
+.product {
+  width: 100%;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 56px;
+    width: 100%;
+  }
+  .item-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    max-width: 360px;
+    width: 100%;
+    height: 269px;
+    position: relative;
+    &__header {
+      max-width: 240px;
+      width: 100%;
+      height: 100px;
+      box-shadow: $card-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      &::before {
+        content: '';
+        left: -15px;
+        top: -15px;
+        position: absolute;
+        background-image: url(../images/50off.png);
+        width: 100px;
+        height: 101px;
+        display: none;
+      }
+      &--discount::before {
+        display: block;
+      }
+      &-best {
+        background: $yellow;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 4px 0;
+        max-width: 80px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: capitalize;
+        text-align: center;
+      }
+    }
+    &__price {
+      font-size: 48px;
+      font-family: $neue-family;
+    }
+    &__period {
+      font-size: 18px;
+    }
+    &__discount {
+      text-decoration: line-through;
+      display: block;
+      text-align: center;
+      color: $gray-dark;
+      font-family: $roboto-family;
+      font-size: 16px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      margin-inline: auto;
+    }
+    &__body {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: $gray;
+      padding-top: 71px;
+    }
+    &__description {
+      font-size: 18px;
+      max-width: 300px;
+      text-align: center;
+      width: 100%;
+      b {
+        display: block;
+      }
+    }
+    &__button {
+      cursor: pointer;
+      border: none;
+      padding: 15px 0;
+      background: $button-gradient;
+      max-width: 190px;
+      width: 100%;
+      margin-top: 31px;
+      font-weight: 500;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $white;
+      border-radius: 40px;
+      padding-right: 25px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../images/arrow_download.png);
+        width: 30px;
+        height: 30px;
+        right: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:hover {
+        box-shadow: $card-shadow;
+      }
+    }
+  }
+}
+
+@import './media';
